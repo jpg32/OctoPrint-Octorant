@@ -36,7 +36,7 @@ Copy Tokens to Octoprint :
 
 ### Message Settings
 
-Here you can customize every message handled by Octorant.
+Here you can customize every message handled by Octoprint.
 
 - **Toggle the message** : by unchecking the checkbox in front of the message title, you can disable the message. It won't be sent to Twitter.
 - **Message** : you can change the default content here. See the section [Message format](#message-format) for more information.
