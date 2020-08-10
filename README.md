@@ -5,7 +5,7 @@ This is a fork of the amazing pluggin [DiscordRemote](https://plugins.octoprint.
 ![twitter result](assets/img/twitter.jpg)
 ![settings octoprint](assets/img/settings.jpg)
 ## SETUP
-### Install the pluggin
+### Install the plugin
 Install manually using this url :  
 https://github.com/jpg32/OctoPrint-Octotweet/archive/master.zip  
 
