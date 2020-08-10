@@ -349,7 +349,8 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
                     snapshot = {
                         'file': ("snapshot.jpg", snapshotImage.getvalue())}
                     img = Image.open(snapshotImage)
-                    img.save("image.png")
+                    file_name = self.get_plugin_data_folder() + "/img/user/image.png"
+                    img.save(file_name)
             except requests.ConnectionError:
                 snapshot = None
                 self._logger.error(
@@ -373,7 +374,7 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
         message = self._settings.get(
             ["username"], merged=True) + " : " + message
         if withSnapshot:
-            media = api.media_upload("image.png")
+            media = api.media_upload(file_name)
             post_result = api.update_status(
                 status=message, media_ids=[media.media_id])
         else:
