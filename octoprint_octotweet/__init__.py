@@ -297,21 +297,6 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
             self._logger.debug(
                 "{}:{} > Output: '{}'".format(eventName, which, out))
             return out
-    def route_hook(self, server_routes, *args, **kwargs):
-		from octoprint.server.util.tornado import LargeResponseHandler, UrlProxyHandler, path_validation_factory
-		from octoprint.util import is_hidden_path
-		if not os.path.exists(self.get_plugin_data_folder()+"/img"):
-			os.mkdir(self.get_plugin_data_folder()+"/img")
-		if not os.path.exists(self.get_plugin_data_folder()+"/img/user"):
-			os.mkdir(self.get_plugin_data_folder()+"/img/user")
-		if not os.path.exists(self.get_plugin_data_folder()+"/tmpgif"): #GWE 05/05/2019 add a folder temp to put image used in gif
-			os.mkdir(self.get_plugin_data_folder()+"/tmpgif")
-		if not os.path.exists(self.get_plugin_data_folder()+"/tmpzip"): #GWE 05/05/2019 add a folder temp to put image used in gif
-			os.mkdir(self.get_plugin_data_folder()+"/tmpzip")
-		return [
-				(r"/img/user/(.*)", LargeResponseHandler, dict(path=self.get_plugin_data_folder() + r"/img/user/", as_attachment=True,allow_client_caching =False)),
-				(r"/img/static/(.*)", LargeResponseHandler, dict(path=self._basefolder + "/static/img/", as_attachment=True,allow_client_caching =True))
-				]
 
     def send_message(self, eventID, message, withSnapshot=False):
 
@@ -365,7 +350,7 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
                     snapshot = {
                         'file': ("snapshot.jpg", snapshotImage.getvalue())}
                     img = Image.open(snapshotImage)
-                    file_name = self.get_plugin_data_folder() + "/img/user/image.png"
+                    file_name = self.get_plugin_data_folder() + "/image.png"
                     img.save(file_name)
             except requests.ConnectionError:
                 snapshot = None
