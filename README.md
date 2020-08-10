@@ -6,8 +6,8 @@ This is a fork of the amazing pluggin [DiscordRemote](https://plugins.octoprint.
 ## SETUP
 ### Install the pluggin
 Install manually using this url :  
-   https://github.com/jpg32/OctoTweet/archive/master.zip
-   
+https://github.com/jpg32/OctoPrint-Octotweet/archive/master.zip  
+
 ### Create Twitter App 
 Login with your Twitter account on [Developer.twitter.com](https://developer.twitter.com/en)  
 Clic to App and Create an app  
