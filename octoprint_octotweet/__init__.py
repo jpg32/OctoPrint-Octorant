@@ -373,7 +373,7 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
 #                im1 = Image.open(r"snapshot.jpg")
 #    		im1.save(r'~/image.png')
         message = self._settings.get(
-            ["username"], merged=True) + " : " + message
+            ["username"], merged=True) + " : " + message + "#OctoTweet"
         if withSnapshot:
             media = api.media_upload(file_name)
             post_result = api.update_status(
