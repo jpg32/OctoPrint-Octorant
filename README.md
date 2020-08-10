@@ -80,7 +80,9 @@ Some events also support variables, here is a basic list :
 - `{time}`: time needed for the print (in seconds)
 - `{time_formatted}` : same as `{time}`, but in a human-readable format (`HH:MM:SS`)
 
-**Printing process : failed event** :                                                                                                                                                                          - `{name}` : file's name that's being printed                                                                                                                                                                  - `{path}` : file's path within its origin location
+**Printing process : failed event** : 
+- `{name}` : file's name that's being printed 
+- `{path}` : file's path within its origin location
 - `{origin}` : the origin storage location
 - `{position}`: position of the hotend
 
