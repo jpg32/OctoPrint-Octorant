@@ -5,6 +5,7 @@ from __future__ import absolute_import
 import json
 import octoprint.plugin
 import octoprint.settings
+import octoprint.filemanager
 import requests
 from datetime import timedelta
 from PIL import Image
