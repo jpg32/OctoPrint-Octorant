@@ -1,7 +1,7 @@
 # Octoprint-OctoTweet 1.0.0
 
 OctoTweet is a plugin allowing Octoprint to send notifications to Twitter.
-This is a fork of the amazing pluggin [DiscordRemote](https://plugins.octoprint.org/plugins/DiscordRemote/) by @bchanudet.
+This is a fork of the amazing pluggin [Octorant](https://plugins.octoprint.org/plugins/Octoprint-Octorant/) by @bchanudet.
 
 ![twitter result](assets/img/twitter.jpg)
 ![settings octoprint](assets/img/settings.jpg)
