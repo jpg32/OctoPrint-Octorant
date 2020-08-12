@@ -165,7 +165,7 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
                 current=self._plugin_version,
 
                 # update method: pip
-                pip="https://github.com/bchanudet/OctoPrint-Octotweet/archive/{target_version}.zip"
+                pip="https://github.com/jpg32/OctoPrint-Octotweet/archive/{target_version}.zip"
             )
         )
 
