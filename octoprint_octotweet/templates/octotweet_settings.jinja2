@@ -1,6 +1,12 @@
 <h3>{{ _('Twitter settings') }}</h3>
 <form class="form-horizontal">
     <div class="control-group">
+        <label class="control-label">{{ _('Activated') }}</label>
+        <div class="controls">
+            <input type="checkbox" data-bind="checked: settings.plugins.octotweet.activated">
+        </div>
+    </div>
+    <div class="control-group">
         <label class="control-label">{{ _('API Key') }}</label>
         <div class="controls">
             <input type="text" class="input-block-level" data-bind="value: settings.plugins.octotweet.consumer_key">
@@ -25,11 +31,16 @@
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label">{{ _('username') }}</label>
+        <label class="control-label">{{ _('Username') }}</label>
         <div class="controls">
             <input type="text" class="input-block-level" data-bind="value: settings.plugins.octotweet.username">
         </div>
     </div>
+     <div class="control-group">
+        <label class="control-label">{{ _('Hashtags') }}</label>
+        <div class="controls">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.octotweet.hashtags">
+        </div>                                                                                                                                                                                                                                   </div>                                                                                                                                                                                                                        
     <div style="clear:both">
         <small>{{ _("If you modify these settings, a test message will be sent to Twitter.") }}</small>
     </div>
