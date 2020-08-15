@@ -362,19 +362,22 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
                     "{}: ConnectTimeout on: '{}'".format(eventID, snapshotUrl))
 
         # Send to twitter
-	if self._settings.get(['activated']) is True:
-        	auth = tweepy.OAuthHandler(self._settings.get(['consumer_key']), self._settings.get(['consumer_secret']))
-        	auth.set_access_token(self._settings.get(['access_token']), self._settings.get(['access_token_secret']))
-        	
-		api = tweepy.API(auth)
-        	
-		message = self._settings.get(["username"], merged=True) + " : " + message + self._settings.get(["hashtags"], merged=True)
-        	if withSnapshot:
-            		media = api.media_upload(file_name)
-            		post_result = api.update_status(
-                	status=message, media_ids=[media.media_id])
-        	else:
-            		post_result = api.update_status(status=message)
+        if self._settings.get(['activated']) is True:
+            auth = tweepy.OAuthHandler(self._settings.get(
+                ['consumer_key']), self._settings.get(['consumer_secret']))
+            auth.set_access_token(self._settings.get(
+                ['access_token']), self._settings.get(['access_token_secret']))
+
+            api = tweepy.API(auth)
+
+            message = self._settings.get(
+                ["username"], merged=True) + " : " + message + self._settings.get(["hashtags"], merged=True)
+            if withSnapshot:
+                media = api.media_upload(file_name)
+                post_result = api.update_status(
+                    status=message, media_ids=[media.media_id])
+            else:
+                post_result = api.update_status(status=message)
         return post_result
 
 
