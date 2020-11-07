@@ -371,7 +371,7 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
             api = tweepy.API(auth)
 
             message = self._settings.get(
-                ["username"], merged=True) + " : " + message + self._settings.get(["hashtags"], merged=True)
+                ["username"], merged=True) + " : " + message
             if withSnapshot:
                 media = api.media_upload(file_name)
                 post_result = api.update_status(
