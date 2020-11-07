@@ -103,9 +103,6 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
                 "with_snapshot": True,
                 "message": "Hello hello! If you see this message, it means that the settings are correct!"
             },
-	    "test": {  # Not a real message, but we will treat it as one
-                "message": "#Hastag"
-            },
         }
 
     def on_after_startup(self):
@@ -375,7 +372,7 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
             api = tweepy.API(auth)
 
             message = self._settings.get(
-                ["username"], merged=True) + " : " + message + self._settings.get(["hashtags"], merged=True)
+                ["username"], merged=True) + " : " + message, merged=True)
             if withSnapshot:
                 media = api.media_upload(file_name)
                 post_result = api.update_status(
