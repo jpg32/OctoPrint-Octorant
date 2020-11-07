@@ -120,7 +120,8 @@ class OctotweetPlugin(octoprint.plugin.EventHandlerPlugin,
             'events': self.events,
             'allow_scripts': False,
             'script_before': '',
-            'script_after': ''
+            'script_after': '',
+					  'hashtag':'#Octotweet'
         }
 
     # Restricts some paths to some roles only
